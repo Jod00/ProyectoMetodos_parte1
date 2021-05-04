@@ -41,13 +41,31 @@ def binario():
 
 #convierte numeros decimales a octal
 def octal():
-    print("hi")
+    try:
+        cadenaordenada=""
+        numero= entrada.get()
+        n = int(numero)
+        ordenoctal = []
+        while n>=1:
+            ordenoctal.append(str(n%8))
+            n= n/8
+        
+        cadenaordenada="".join(ordenoctal[::-1])
+
+        et3=Label(ventana, text=cadenaordenada,font="Arial 10" )
+        et3.grid(column=1,row=6)
+    except:
+        et3= Label(ventana, text="Solo es permitido numeros Enteros")
+        et3.grid(column=1,row=8)
+
 
 #convierte numeros decimales a hexadecimal
+def hexadecimal():
+        print("f")
 
 
-et3= Label(ventana,text="Convertir a:",font="Arial 13")
-et3.grid(column=1,row=3)
+etiq= Label(ventana,text="Convertir a:",font="Arial 13")
+etiq.grid(column=1,row=3)
 
 boton1= Button(ventana,text="Binario",fg="Blue", command=binario)
 boton1.grid(column=0,row=4)
@@ -55,7 +73,7 @@ boton1.grid(column=0,row=4)
 boton2= Button(ventana,text="octal",fg="Blue", command=octal) #cambiar
 boton2.grid(column=1,row=4)
 
-boton3= Button(ventana,text="hexadecimal",fg="Blue", command=binario) #cambiar
+boton3= Button(ventana,text="hexadecimal",fg="Blue", command=hexadecimal) #cambiar
 boton3.grid(column=2,row=4)
 
 ventana.mainloop()
