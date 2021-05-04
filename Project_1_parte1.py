@@ -16,8 +16,15 @@ entrada.grid(column=1,row=2)
 def binario():
     numero= entrada.get()
     nu= int(numero)
-    ordenbin = zeros(10)
-    cont=9
+    #obtiene el tamanno que debe tener el arreglo
+    tamano=0
+    while nu>=1:
+        tamano=tamano+1
+        nu=nu/2
+    
+    nu=int(numero)
+    ordenbin = zeros(tamano)
+    cont=tamano-1
     
     while nu >= 1 :
         ordenbin[cont]= nu%2
@@ -28,7 +35,8 @@ def binario():
     et2.grid(column=0,row=6)
 
 #convierte numeros decimales a octal
-
+def octal():
+    print("hi")
 
 #convierte numeros decimales a hexadecimal
 
@@ -39,7 +47,7 @@ et3.grid(column=1,row=3)
 boton1= Button(ventana,text="Binario",fg="Blue", command=binario)
 boton1.grid(column=0,row=4)
 
-boton2= Button(ventana,text="octal",fg="Blue", command=binario) #cambiar
+boton2= Button(ventana,text="octal",fg="Blue", command=octal) #cambiar
 boton2.grid(column=1,row=4)
 
 boton3= Button(ventana,text="hexadecimal",fg="Blue", command=binario) #cambiar
