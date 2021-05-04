@@ -14,25 +14,30 @@ entrada.grid(column=1,row=2)
 
 #convierte numeros decimales a binarios
 def binario():
-    numero= entrada.get()
-    nu= int(numero)
-    #obtiene el tamanno que debe tener el arreglo
-    tamano=0
-    while nu>=1:
-        tamano=tamano+1
-        nu=nu/2
-    
-    nu=int(numero)
-    ordenbin = zeros(tamano)
-    cont=tamano-1
-    
-    while nu >= 1 :
-        ordenbin[cont]= nu%2
-        cont=cont-1
-        nu=nu/2
+    et2= Label(ventana, text="")
+    try: 
+        numero= entrada.get()
+        nu= int(numero)
+        #obtiene el tamanno que debe tener el arreglo
+        tamano=0
+        while nu>=1:
+            tamano=tamano+1
+            nu=nu/2
+        
+        nu=int(numero)
+        ordenbin = zeros(tamano)
+        cont=tamano-1
+        
+        while nu >= 1 :
+            ordenbin[cont]= nu%2
+            cont=cont-1
+            nu=nu/2
 
-    et2= Label(ventana, text=str(ordenbin))
-    et2.grid(column=0,row=6)
+        et2= Label(ventana, text=str(ordenbin))
+        et2.grid(column=0,row=6)
+    except:
+        et2= Label(ventana, text="Solo es permitido numeros Enteros")
+        et2.grid(column=1,row=8)
 
 #convierte numeros decimales a octal
 def octal():
